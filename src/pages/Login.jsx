@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, CheckCircle, ArrowRight, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import loginCharacterImg from '../assets/login_character.png';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
@@ -19,6 +20,17 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
+
+        // Simulate API call and login
+        setTimeout(() => {
+            const dummyUser = {
+                username: formData.email.split('@')[0] || 'Worker',
+                email: formData.email,
+                isLoggedIn: true
+            };
+            localStorage.setItem('currentUser', JSON.stringify(dummyUser));
+            navigate('/dashboard');
+        }, 1500);
     };
 
     if (isSubmitted) {
@@ -33,7 +45,7 @@ const Login = () => {
                         <CheckCircle size={32} />
                     </div>
                     <h2 className="text-2xl font-bold text-white mb-2">Welcome Back!</h2>
-                    <p className="text-gray-400">Logging you in...</p>
+                    <p className="text-gray-400">Logging you in... Redirecting to Dashboard</p>
                 </motion.div>
             </div>
         )

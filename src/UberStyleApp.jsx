@@ -36,8 +36,12 @@ const initialHistory = Array.from({ length: 8 }, (_, i) => ({
     status: i === 0 ? 'Pending' : 'Verified'
 }));
 
+import { useNavigate } from 'react-router-dom';
+
 // 1. Landing Page
-const LandingPage = ({ onNavigate }) => {
+const LandingPage = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="landing-container">
             <nav className="landing-nav">
@@ -46,8 +50,8 @@ const LandingPage = ({ onNavigate }) => {
                     <span className="logo-text">GigGod</span>
                 </div>
                 <div className="nav-actions">
-                    <button className="btn-secondary" onClick={() => onNavigate('login')}>Log in</button>
-                    <button className="btn-primary" onClick={() => onNavigate('signup')}>Sign up</button>
+                    <button className="btn-secondary" onClick={() => navigate('/login')}>Log in</button>
+                    <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up</button>
                 </div>
             </nav>
             <main className="landing-hero">
@@ -60,7 +64,7 @@ const LandingPage = ({ onNavigate }) => {
                         Your algorithmic thinking partner. Uncover payment patterns and take control of your gig data.
                     </p>
                     <div className="hero-auth-box">
-                        <button className="btn-email-auth" onClick={() => onNavigate('login')}>
+                        <button className="btn-email-auth" onClick={() => navigate('/login')}>
                             Get Started
                         </button>
                     </div>
