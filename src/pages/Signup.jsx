@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, MapPin, Briefcase, Eye, EyeOff, CheckCircle, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import characterImg from '../assets/character.png';
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
@@ -23,6 +24,15 @@ const Signup = () => {
         setIsSubmitted(true);
     };
 
+    useEffect(() => {
+        if (isSubmitted) {
+            const timer = setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [isSubmitted, navigate]);
+
     if (isSubmitted) {
         return (
             <div className="min-h-screen bg-dark-900 flex items-center justify-center p-4">
@@ -35,7 +45,7 @@ const Signup = () => {
                         <CheckCircle size={32} />
                     </div>
                     <h2 className="text-2xl font-bold text-white mb-2">Welcome Aboard!</h2>
-                    <p className="text-gray-400">Redirecting to your dashboard...</p>
+                    <p className="text-gray-400">Account created successfully. Redirecting to Login...</p>
                 </motion.div>
             </div>
         )
@@ -61,7 +71,7 @@ const Signup = () => {
                     <motion.img
                         src={characterImg}
                         alt="3D Character"
-                        className="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl"
+                        className="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl mix-blend-lighten"
                         initial={{ y: 0, rotate: 0 }}
                         animate={{
                             y: [0, -15, 0, -15, 0],
