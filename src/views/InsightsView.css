@@ -1,0 +1,155 @@
+.insights-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+}
+
+/* Insufficient Data State */
+.insufficient-data {
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.insufficient-data .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-main);
+}
+
+.insufficient-data .subtitle {
+    color: var(--color-text-muted);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    transition: width 0.3s ease;
+}
+
+.count {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Insight Cards */
+.insight-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.insight-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.insight-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.insight-text.muted {
+    font-style: italic;
+}
+
+/* Fairness Breakdown */
+.fairness-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.fairness-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    gap: 0.5rem;
+}
+
+.fairness-item.fair {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.fairness-item.underpaid {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.fairness-item .count {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.fairness-item .label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Metric Large */
+.metric-large {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.metric-label {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: -0.5rem 0 0 0;
+}
+
+/* Alert Status */
+.alert-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-icon {
+    font-size: 1.5rem;
+}
+
+.status-text {
+    color: var(--color-status-success);
+    font-weight: 600;
+}
+
+/* Disabled Card */
+.insight-card.disabled {
+    opacity: 0.6;
+    border: 1px dashed var(--glass-border);
+}

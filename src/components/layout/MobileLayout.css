@@ -1,0 +1,16 @@
+.mobile-layout {
+    min-height: 100vh;
+    background-color: var(--color-bg-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    flex: 1;
+    padding: 0 1rem;
+    padding-bottom: 5rem;
+    /* Space for Bottom Nav */
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+}

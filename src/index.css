@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Uber-Inspired Color Palette */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #eeeeee;
+  --color-gray-200: #e2e2e2;
+  --color-gray-300: #cbcbcb;
+  --color-gray-500: #6b6b6b;
+  --color-gray-700: #333333;
+  --color-green: #05b169;
+
+  /* Typography */
+  --font-main: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
