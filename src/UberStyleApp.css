@@ -3,27 +3,35 @@
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
+/* === ROOT VARIABLES (LIGHT THEME) === */
 :root {
-    --bg-dark: #0f0f0f;
-    --bg-card: rgba(22, 22, 22, 0.95);
-    --bg-subtle: #202020;
-    --primary: #d97757;
-    --primary-hover: #c56a4b;
-    --text-main: #f0f0f0;
-    --text-muted: #888;
-    --border: #2a2a2a;
-    --success: #69db7c;
-    --danger: #ff6b6b;
-    --warning: #fcc419;
-    --font-main: 'Outfit', sans-serif;
-    --font-display: 'Playfair Display', serif;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --accent: #0066cc;
+    --accent-hover: #0052a3;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-lg: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
@@ -1044,6 +1052,13 @@ button {
     color: var(--warning);
 }
 
+.status-pill.underpaid,
+.status-pill.exploitative,
+.status-pill.unfair {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+}
+
 /* Log Data Layout - Extended */
 .log-layout {
     display: grid;
@@ -1406,4 +1421,96 @@ input:checked+.slider:before {
     .sidebar-menu button {
         white-space: nowrap;
     }
+}
+
+/* ========================================= LIGHT THEME OVERRIDE ========================================= */
+:root {
+    --bg-dark: #ffffff !important;
+    --bg-card: #f8f9fa !important;
+    --bg-subtle: #e9ecef !important;
+    --primary: #0066cc !important;
+    --primary-hover: #0052a3 !important;
+    --text-main: #000000 !important;
+    --text-muted: #6c757d !important;
+    --border: #dee2e6 !important;
+    --success: #28a745 !important;
+    --danger: #dc3545 !important;
+    --warning: #ffc107 !important;
+}
+
+body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.landing-container {
+    background: #ffffff !important;
+}
+
+.auth-page {
+    background-color: #f8f9fa !important;
+    background-image: none !important;
+}
+
+.enhanced-auth-card {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.auth-header h2 {
+    color: #000000 !important;
+}
+
+.form-group.floating input {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    color: #000000 !important;
+}
+
+.form-group.floating label {
+    color: #6c757d !important;
+}
+
+.dashboard-layout {
+    background: #ffffff !important;
+}
+
+.sidebar-enhanced {
+    background: #f8f9fa !important;
+    border-right: 1px solid #dee2e6 !important;
+}
+
+.sidebar-bottom {
+    background: #e9ecef !important;
+}
+
+.main-area {
+    background: #ffffff !important;
+}
+
+.stat-card {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.main-chart,
+.chart-card {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.recent-list,
+.p-card-mini {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.recent-item:hover {
+    background: #f8f9fa !important;
 }

@@ -17,18 +17,9 @@ const DataCollectionView = ({ onUpload }) => {
 
         setIsProcessing(true);
 
+        // TODO: Integrate with real backend API for OCR and analysis
         setTimeout(() => {
-            const mockTrip = {
-                id: Date.now(),
-                date: new Date().toLocaleDateString(),
-                platform: 'Uber',
-                amount: (Math.random() * (25 - 10) + 10).toFixed(2),
-                status: Math.random() > 0.5 ? 'Fair' : 'Underpaid',
-                screenshot: URL.createObjectURL(file),
-                type: uploadType
-            };
-
-            onUpload(mockTrip);
+            alert('Backend API integration needed');
             setIsProcessing(false);
         }, 2000);
     };
